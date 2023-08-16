@@ -15,3 +15,12 @@
 (function hello() {
   console.log('Hello');
 })();
+
+
+// ---> AndreGM with string literals
+(function () {
+  const user = 'Zé Manel';
+  console.log(user);
+  const hello = () => console.log(`Hello ${user} from the IIFE`);
+  hello();
+})();
