@@ -14,8 +14,8 @@ function onChecked(e) {
 
 function onFocus() {
   console.log('Input is focused');
-  itemInput.style.outlineStyle = 'solid';
-  itemInput.style.outlineWidth = '1px';
+  itemInput.style.outlineStyle = 'dotted';
+  itemInput.style.outlineWidth = '2px';
   itemInput.style.outlineColor = 'red';
 }
 

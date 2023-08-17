@@ -1,19 +1,19 @@
 const form = document.getElementById('item-form');
 
-function onSubmit(e) {
-  e.preventDefault();
+// function onSubmit(e) {
+//   e.preventDefault();
 
-  // Get value with .value
-  const item = document.getElementById('item-input').value;
-  const priority = document.getElementById('priority-input').value;
+//   // Get value with .value
+//   const item = document.getElementById('item-input').value;
+//   const priority = document.getElementById('priority-input').value;
 
-  if (item === '' || priority === '0') {
-    alert('Please fill in all fields');
-    return;
-  }
+//   if (item === '' || priority === '0') {
+//     alert('Please fill in all fields');
+//     return;
+//   }
 
-  console.log(item, priority);
-}
+//   console.log(item, priority);
+// }
 
 // Using the FormData Object
 function onSubmit2(e) {
@@ -22,16 +22,16 @@ function onSubmit2(e) {
   const formData = new FormData(form);
 
   // Get individual items
-  const item = formData.get('item');
-  const priority = formData.get('priority');
+  // const item = formData.get('item');
+  // const priority = formData.get('priority');
 
-  console.log(item, priority);
+  // console.log(item, priority);
 
   // Get al entried as an Iterator
   const entries = formData.entries();
   console.log(entries);
 
-  // Loop through entries
+  // // Loop through entries
   for (let entry of entries) {
     console.log(entry[1]);
   }

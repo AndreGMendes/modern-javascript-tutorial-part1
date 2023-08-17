@@ -1,5 +1,10 @@
 const logo = document.querySelector('img');
 
+
+// logo.addEventListener('click', function (e) {console.log(e)});
+
+
+
 function onClick(e) {
   // Event properties
   // console.log(e.target);
