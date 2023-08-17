@@ -1,5 +1,5 @@
 const text = document.querySelector('p');
-const itemList = document.querySelector('.item-list');
+const itemList = document.querySelector('.item-listXXXXXXXXXX, .items'); // Query selecting more than one class (testing)
 const items = itemList.querySelectorAll('li');
 
 function run() {
@@ -33,3 +33,15 @@ function run() {
 }
 
 document.querySelector('button').onclick = run;
+
+
+
+// AndreGM ::  Testing Stuff
+const logMe = () => {console.log ("Zéeee"); return `Manel`};
+
+function logMe2 () {
+  console.log ("Zéeee"); 
+  return `Manel`;
+};
+
+document.querySelector('button').onmouseover = logMe2;
