@@ -6,27 +6,27 @@ const listItems = document.querySelectorAll('.item');
 // Access elements by index
 console.log(listItems[1].innerText);
 
-// Setting a color for specific element
+// // Setting a color for specific element
 listItems[1].style.color = 'red';
 
-// We can use forEach() on a NodeList
+// // We can use forEach() on a NodeList
 listItems.forEach((item, index) => {
-  item.style.color = 'red';
+  item.style.color = 'green';
 
   if (index === 1) {
     item.remove();
   }
 
   if (index === 0) {
-    item.innerHTML = ` Oranges
+    item.innerHTML = ` Coconut
     <button class="remove-item btn-link text-red">
       <i class="fa-solid fa-xmark"></i>
     </button>`;
   }
 });
 
-// getElementsByClassName()
-// Returns an HTMLCollection
+// // getElementsByClassName()
+// // Returns an HTMLCollection
 
 const listItems2 = document.getElementsByClassName('item');
 
@@ -38,7 +38,7 @@ listItemsArray.forEach((item) => {
   console.log(item.innerText);
 });
 
-// getElementsByTagName()
+// // getElementsByTagName()
 
 const listItems3 = document.getElementsByTagName('li');
 console.log(listItems3[0].innerText);
