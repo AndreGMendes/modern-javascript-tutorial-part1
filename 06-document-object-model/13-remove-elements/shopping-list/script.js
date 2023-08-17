@@ -39,4 +39,6 @@ const removeItem4 = (itemNumber) =>
 removeClearButton();
 // removeFirstItem();
 // removeItem(2);
-removeItem4(2);
+// removeItem2(1);
+// removeItem3(4);
+removeItem4(1);
