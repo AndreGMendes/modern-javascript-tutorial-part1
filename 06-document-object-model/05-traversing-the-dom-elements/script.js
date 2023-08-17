@@ -16,7 +16,7 @@ parent.children[1].style.color = 'red';
 parent.firstElementChild.innerText = 'Child One';
 parent.lastElementChild.innerText = 'Child Three';
 
-// Get parent elements from a child
+// // Get parent elements from a child
 
 const child = document.querySelector('.child');
 
@@ -24,7 +24,7 @@ output = child.parentElement;
 child.parentElement.style.border = '1px solid #ccc';
 child.parentElement.style.padding = '10px';
 
-// Get sibling elements
+// // Get sibling elements
 
 const secondItem = document.querySelector('.child:nth-child(2)');
 

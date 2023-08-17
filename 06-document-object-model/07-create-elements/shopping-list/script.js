@@ -6,8 +6,13 @@ div.setAttribute('title', 'My Element');
 // div.innerText = 'Hello World';
 
 const text = document.createTextNode('Hello World');
-div.appendChild(text);
+// div.appendChild(text);
 
 // document.body.appendChild(div);
 
-document.querySelector('ul').appendChild(div);
+// document.querySelector('ul').appendChild(div);
+
+
+
+// AndreGM
+document.querySelector('ul').appendChild(div.appendChild(text));
