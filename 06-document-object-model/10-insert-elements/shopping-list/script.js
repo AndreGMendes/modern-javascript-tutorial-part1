@@ -6,6 +6,7 @@ function insertElement() {
   h1.textContent = 'insertAdjacentElement';
 
   filter.insertAdjacentElement('beforebegin', h1);
+  
 }
 
 // insertAdjacentText Example
@@ -34,7 +35,37 @@ function insertBeforeItem() {
   ul.insertBefore(li, thirdItem);
 }
 
+
+
+// ----------- Creating insertAfter Challenge
+
+// 1. New element to insert
+const li = document.createElement('li');
+li.textContent = 'Insert me after!'
+
+// Existing element to insert after
+const firstItem = document.querySelector('li:first-child');
+
+// Our custom function
+InsertAfter(li, firstItem);
+
+function InsertAfter(newElement, existingElement) {
+  
+  const ul = existingElement.parentElement;
+
+  ul.insertBefore(newElement, existingElement.nextSibling)
+
+  // existingElement.insertAdjacentElement('afterend', newElement) ---> Another way
+
+}
+
+
+
+
 insertElement();
+insertText();
+insertHTML();
+insertBeforeItem();
 
 /*
 <!-- beforebegin -->
