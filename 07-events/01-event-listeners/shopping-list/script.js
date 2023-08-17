@@ -13,23 +13,36 @@ function onClear() {
   }
 }
 
+// ---------------- OLD WAY
 // JavaScript Event Listener
-clearBtn.onclick = function () {
-  alert('Clear Items');
-};
+// clearBtn.onclick = function () {
+//   alert('Clear Items');
+// };
 
-clearBtn.onclick = function () {
-  console.log('Clear Items');
-};
+// clearBtn.onclick = function () {
+//   console.log('Clear Items');
+// };
+// ---------------- OLD WAY
 
-// addEventListener()
-clearBtn.addEventListener('click', () => alert('Clear Items'));
 
-// Use named function
+
+// ---------------- MODERN WAY
+
+// // addEventListener()
+// clearBtn.addEventListener('click', () => alert('Clear Items'));
+// clearBtn.addEventListener('click', () => console.log('Clear Items'));
+
+
+// function onClear2() {
+//   alert('Clear Items')
+// }
+
+
+// // Use named function
 clearBtn.addEventListener('click', onClear);
 
-// removeEventListener()
+// // removeEventListener()
 setTimeout(() => clearBtn.removeEventListener('click', onClear), 5000);
 
-// Fire off event from JS
-setTimeout(() => clearBtn.click(), 5000);
+// // Fire off event from JS
+setTimeout(() => clearBtn.click(), 2000);
