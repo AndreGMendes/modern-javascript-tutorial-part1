@@ -13,7 +13,7 @@ const promise = new Promise((resolve, reject) => {
 
 const getUser = new Promise((resolve, reject) => {
   setTimeout(() => {
-    let error = true;
+    let error = false;
 
     if (!error) {
       resolve({ name: 'John', age: 30 });
