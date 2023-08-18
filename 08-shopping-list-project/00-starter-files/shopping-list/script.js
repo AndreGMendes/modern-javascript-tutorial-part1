@@ -57,6 +57,36 @@ function clearAllItems (e) {
     checkUIState();
 }
 
+function filterItems (e) {
+
+    // Get all Items in the List
+    const items = document.querySelectorAll('li');
+
+    // Filter the input to lower case;
+    const text = e.target.value.toLowerCase();
+    console.log(text);
+
+    items.forEach((item) => {
+
+        const itemName = item.firstChild.textContent.toLowerCase();
+
+        // Using the 'match()' method
+        // if (!itemName.match(text)) {
+        //     item.style.display = 'none';
+        // } else {
+        //     item.style.display = 'flex'
+        // }
+
+        if (itemName.indexOf(text) != -1) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none'
+        }
+
+    })
+
+   
+}
 
 // STATE FUNCTIONS -------------------------------------------
 function checkUIState () {
@@ -96,6 +126,7 @@ function createIcon(classes) {
 itemForm.addEventListener('submit', addItem);
 itemList.addEventListener('click', removeItem);
 clearButton.addEventListener('click', clearAllItems);
+itemFilter.addEventListener('input', filterItems);
 
 
 // AUTOMATIC FUNCTIONS ---------------------------------------
