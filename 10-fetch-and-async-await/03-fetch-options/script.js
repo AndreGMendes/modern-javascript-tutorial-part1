@@ -9,8 +9,8 @@ function createPost({ title, body }) {
   fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
-      title,
-      body,
+      titleKey: title,
+      bodyKey: body
     }),
     headers: {
       'Content-Type': 'application/json',

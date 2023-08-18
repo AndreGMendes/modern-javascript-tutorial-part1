@@ -1,5 +1,7 @@
 function getData(endpoint) {
+  
   return new Promise((resolve, reject) => {
+    
     const xhr = new XMLHttpRequest();
 
     xhr.open('GET', endpoint);
@@ -17,7 +19,9 @@ function getData(endpoint) {
     setTimeout(() => {
       xhr.send();
     }, Math.floor(Math.random() * 3000) + 1000);
+    
   });
+
 }
 
 const moviesPromise = getData('./movies.json');

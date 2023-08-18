@@ -1,6 +1,7 @@
 const promise = new Promise((resolve, reject) => {
+  
   setTimeout(() => {
-    let error = true;
+    let error = false;
 
     if (!error) {
       resolve({ name: 'John', age: 30 });
@@ -8,6 +9,7 @@ const promise = new Promise((resolve, reject) => {
       reject('Error: Something went wrong');
     }
   }, 1000);
+
 });
 
 promise

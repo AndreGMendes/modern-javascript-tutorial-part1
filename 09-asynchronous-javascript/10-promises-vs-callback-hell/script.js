@@ -1,5 +1,7 @@
 function getData(endpoint) {
+
   return new Promise((resolve, reject) => {
+    
     const xhr = new XMLHttpRequest();
 
     xhr.open('GET', endpoint);
@@ -17,7 +19,9 @@ function getData(endpoint) {
     setTimeout(() => {
       xhr.send();
     }, Math.floor(Math.random() * 3000) + 1000);
+
   });
+
 }
 
 // Whatever we return from a .then() is passed into the next .then() callback function args
@@ -34,3 +38,31 @@ getData('./movies.json')
     console.log(directors);
   })
   .catch((error) => console.log(error));
+
+
+
+
+  // Andy :: IIFE (Immediately Invoked Function Expression) VS Arrow Function VS Regular Function 
+const ze = ((x) => {
+    return (x);
+  })('Zé');
+
+  const manel = (x) => {
+    x = 'Manel';
+    return (x);
+  };
+
+  const chico = (function (x) {
+    return (x);
+  })('Chico');
+
+  const rui = function (x) {
+    x = 'Rui';
+    return (x);
+  };
+
+ console.log(ze)
+ console.log(manel());
+
+ console.log(chico);
+ console.log(rui());

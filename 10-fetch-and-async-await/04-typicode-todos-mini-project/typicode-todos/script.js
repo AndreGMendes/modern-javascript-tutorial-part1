@@ -71,10 +71,13 @@ const deleteTodo = (e) => {
 
 const init = () => {
   document.addEventListener('DOMContentLoaded', getTodos);
-  document.querySelector('#todo-form').addEventListener('submit', createTodo);
-  document
-    .querySelector('#todo-list')
+  
+  document.querySelector('#todo-form')
+    .addEventListener('submit', createTodo);
+  
+  document.querySelector('#todo-list')
     .addEventListener('click', toggleCompleted);
+  
   document.querySelector('#todo-list').addEventListener('dblclick', deleteTodo);
 };
 

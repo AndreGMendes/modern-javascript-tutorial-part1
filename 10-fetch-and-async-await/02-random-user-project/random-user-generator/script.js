@@ -5,6 +5,7 @@ function fetchUser() {
     .then((data) => {
       hideSpinner();
       displayUser(data.results[0]);
+      console.log(data.results[0].name.first);
     });
 }
 

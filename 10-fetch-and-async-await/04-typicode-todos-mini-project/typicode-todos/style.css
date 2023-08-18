@@ -50,5 +50,6 @@ input[type='text'] {
 }
 
 .done {
-  background: #ccc;
+  background: #ff0000;
+  color: white
 }
