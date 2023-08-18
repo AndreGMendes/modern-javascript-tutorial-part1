@@ -6,7 +6,7 @@ const clearButton = document.getElementById('clear');
 const itemFilter = document.getElementById('filter')
 
 // MAIN FUNCTIONS --------------------------------------------
-function addItem (e) {
+function onAddItemSubmit (e) {
     
     // to prevent 'Event Bubbling'
     e.preventDefault();
@@ -18,18 +18,11 @@ function addItem (e) {
         return;
     }
 
-    // Create Parent element
-    const li = document.createElement('li');
-    li.appendChild(document.createTextNode(newItem));
+    // Function for creating the element and adding it to the DOM
+    addItemToDom (newItem);
 
-    // Create Child elements
-    const button = createButton ('remove-item btn-link text-red');
-    
-    // Append the button to the List Element
-    li.appendChild(button);
-    
-    // Append the list element to the List of elements 
-    itemList.appendChild(li); 
+    // Function for saving the item to the Browser's Local Storage
+    addItemToStorage (newItem);
 
 
     // Check the UI for adding back the Filter and the Clear button
@@ -123,7 +116,7 @@ function createIcon(classes) {
 
 
 // EVENT LISTENERS -------------------------------------------
-itemForm.addEventListener('submit', addItem);
+itemForm.addEventListener('submit', onAddItemSubmit);
 itemList.addEventListener('click', removeItem);
 clearButton.addEventListener('click', clearAllItems);
 itemFilter.addEventListener('input', filterItems);
@@ -131,3 +124,39 @@ itemFilter.addEventListener('input', filterItems);
 
 // AUTOMATIC FUNCTIONS ---------------------------------------
 checkUIState();
+
+
+// DOM FUNCTIONS ---------------------------------------------
+function addItemToDom (item) {
+
+    // Create Parent element
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(item));
+
+    // Create Child elements
+    const button = createButton ('remove-item btn-link text-red');
+
+    // Append the button to the List Element
+    li.appendChild(button);
+
+    // Append the list element to the List of elements 
+    itemList.appendChild(li); 
+}
+
+
+// LOCAL STORAGE FUNCTIONS -----------------------------------
+function addItemToStorage(item) {
+    let itemsFromStorage;
+    
+    if (localStorage.getItem('items') === null) {
+        itemsFromStorage = []
+    } else {
+        itemsFromStorage = JSON.parse(localStorage.getItem('items'));
+    }
+
+    // Add new item to the array
+    itemsFromStorage.push(item);
+
+    // Convert the array back to JSON string and save it to the Local Storage
+    localStorage.setItem('items', JSON.stringify(itemsFromStorage))
+}
