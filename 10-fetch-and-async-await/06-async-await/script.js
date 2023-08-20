@@ -32,11 +32,11 @@
 // getPromise();
 
 
-// ---------
 
 
 
-function getData(endpoint) {
+// Get USERS: Using PROMISE -----------------------------------------------------------
+function getDataUsingPROMISE(endpoint) {
 
   return new Promise((resolve, reject) => {
     
@@ -54,50 +54,68 @@ function getData(endpoint) {
       }
     };
 
-    setTimeout(() => {
-      xhr.send();
-    }, Math.floor(Math.random() * 3000) + 1000);
-
+    xhr.send();
   });
-
 }
 
 
-
-getData('https://jsonplaceholder.typicode.com/users')
+getDataUsingPROMISE('https://jsonplaceholder.typicode.com/users')
   .then((userlist) => {
     console.log(userlist);
   })
   .catch((error) => console.log(error));
+// -----------------------------------------------------------------------------------
 
 
 
-// ---------
+
+// Get USERS: Using FETCH -----------------------------------------------------------
+// Fetching from an API
+function getDataUsingFETCH () {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => {
+      if (!response.ok) {throw new Error('Request Failed!!!')}
+      return response.json()})
+    .then((data) => {
+      console.log(data)})
+    .catch((error) => {
+      console.log(error);
+});
+}
+
+getDataUsingFETCH();
 
 
 
-// ASYNC with FETCH -----------------------------------------------------------
+    
 
-async function getUsers() {
+// -----------------------------------------------------------------------------------
+
+
+
+
+// Get USERS: Using ASYNC AWAIT -----------------------------------------------------------
+async function getDataUsingAWAIT() {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
   const data = await res.json();
 
   console.log(data);
 }
 
-getUsers();
+getDataUsingAWAIT();
+// -----------------------------------------------------------------------------------
 
 
 
-//  -----------------------------------------------------------
 
-// const getPosts = async () => {
-//   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-//   const data = await res.json();
+// Get USERS: Using ASYNC AWAIT (Using an ARROW FUNCTION) ----------------------------
+const getDataUsingAWAITArrowFunction = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await res.json();
 
-//   throw new Error('Hello');
+  // throw new Error('Hello');
 
-//   console.log(data);
-// };
+  console.log(data);
+};
 
-// getPosts().catch((error) => console.log(error));
+getDataUsingAWAITArrowFunction().catch((error) => console.log(error));

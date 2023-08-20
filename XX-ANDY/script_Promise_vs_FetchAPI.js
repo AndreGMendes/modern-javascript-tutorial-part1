@@ -1,7 +1,6 @@
 
  // Get USERS: Using PROMISE -----------------------------------------------------------
-
-function getData(endpoint) {
+function getDataUsingPROMISE(endpoint) {
 
     return new Promise((resolve, reject) => {
       
@@ -28,7 +27,7 @@ function getData(endpoint) {
   }
   
   
-  getData('https://jsonplaceholder.typicode.com/users')
+  getDataUsingPROMISE('https://jsonplaceholder.typicode.com/users')
     .then((userlist) => {
       console.log(userlist);
     })
@@ -40,23 +39,43 @@ function getData(endpoint) {
 
  // Get USERS: Using FETCH -----------------------------------------------------------
  // Fetching from an API
- fetch('https://jsonplaceholder.typicode.com/users')
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+ function getDataUsingFETCH () {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+  }
+  
+  getDataUsingFETCH();
+
+
+// Example: using validations
+
+//   function getDataUsingFETCH () {
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//       .then((response) => {
+//         if (!response.ok) {throw new Error('Request Failed!!!')}
+//         return response.json()})
+//       .then((data) => {
+//         console.log(data)})
+//       .catch((error) => {
+//         console.log(error);
+//   });
+//   }
+  
+//   getDataUsingFETCH();
 // -----------------------------------------------------------------------------------
 
 
 
   
   
-  
  // Get USERS: Using ASYNC AWAIT -----------------------------------------------------------
-  async function getUsers() {
+ async function getDataUsingAWAIT() {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await res.json();
   
     console.log(data);
   }
   
-  getUsers();
+  getDataUsingAWAIT();
   // -----------------------------------------------------------------------------------
