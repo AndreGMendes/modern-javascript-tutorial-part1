@@ -1,13 +1,16 @@
 // --------------------------------------------------------
+// REGULAR FUNCTIONS BIND THE 'THIS' KEYWORD AUTOMATICALY TO AN OBJECT DEPENDING ON WHERE THE FUNCTION IS BEING CALLED
+
+
+// --------------------------------------------------------
+// EXAMPLE 1
+// --------------------------------------------------------
 // In ARROW Functions the 'THIS' Keyword refers to where the Arrow function is defined.
 // In the example bellow the arrow function is defined inside the person object, 
 // so the 'THIS' keyword will point to the age of the person.
 
 // When a regular function is defined inside another function which is itself inside and Object, 
 // when called it will look on the window object. 
-
-
-// EXAMPLE 1
 
 var personA = {
     age: 28,
