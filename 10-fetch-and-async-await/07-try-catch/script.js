@@ -14,7 +14,7 @@ function double(number) {
 
 try {
   const y = double('hello');
-  console.log(y);
+  // console.log(y);
 } catch (error) {
   console.log(error);
 }

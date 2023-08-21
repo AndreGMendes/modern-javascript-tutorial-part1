@@ -1,7 +1,7 @@
 const getUsers = async () => {
   try {
-    // const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    const response = await fetch('http://httpstat.us/500');
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    // const response = await fetch('http://httpstat.us/500');
 
     if (!response.ok) {
       throw new Error('Request Failed');
@@ -29,4 +29,4 @@ const getPosts = async () => {
 };
 
 // getUsers();
-getPosts().catch((error) => console.log(error));
+getPosts().catch((error) => console.log(`There was an error dude! -> ${error}`));
