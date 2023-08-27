@@ -11,8 +11,8 @@ function clock() {
 
   // Set default styles
   ctx.strokeStyle = '#000000';
-  ctx.fillStyle = '#f4f4f4';
-  ctx.lineWidth = 5;
+  ctx.fillStyle = 'lightgray';
+  ctx.lineWidth = 3;
   ctx.lineCap = 'round';
 
   // Draw clock face/border
@@ -20,7 +20,7 @@ function clock() {
   ctx.beginPath();
   ctx.lineWidth = 14;
   ctx.strokeStyle = '#800000';
-  ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
+  ctx.arc(0, 0, 132, 0, Math.PI * 2, true);
   ctx.stroke();
   ctx.fill();
   ctx.restore();
@@ -55,7 +55,7 @@ function clock() {
   const min = now.getMinutes();
   const sec = now.getSeconds();
 
-  // console.log(`${hr}:${min}:${sec}`);
+  console.log(`${hr}:${min}:${sec}`);
 
   // Draw hour hand
   ctx.save();
