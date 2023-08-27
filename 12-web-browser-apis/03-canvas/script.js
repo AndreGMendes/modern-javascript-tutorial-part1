@@ -26,8 +26,46 @@ ctx.strokeStyle = 'blue';
 ctx.fillText('Hello World', 300, 100, 300);
 ctx.strokeText('Hello World', 300, 500, 300);
 
-// Draw image
+// // Draw image
 const image = document.querySelector('img');
 image.style.display = 'none';
 
 image.addEventListener('load', () => ctx.drawImage(image, 250, 250, 100, 100));
+
+
+
+
+// function squareFromLines() {
+
+//     let initialX = 300;
+//     let initialY = 300;
+
+//     let finalX = 300;
+//     let finalY = 300;
+
+//     lineSize = 100;
+
+//     let index = 0;
+
+//     for (index = 1; index <= 4; index++) {
+        
+        
+//         ctx.beginPath();
+//         ctx.strokeStyle = 'orange';
+//         ctx.lineWidth = 5;
+//         ctx.moveTo(initialX, initialX);
+//         ctx.lineTo(finalX + lineSize, finalY + lineSize);
+//         ctx.stroke();
+        
+//         if (index % 2 !== 0) {
+//             finalY += 100
+//             initialY = finalY
+//         } else {
+//             finalX += 100;
+//             initialX = finalX;
+//         }
+        
+//     }
+// }
+
+// squareFromLines()
