@@ -7,12 +7,17 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const marker = L.marker([0, 0]).addTo(map);
 
-navigator.geolocation.getCurrentPosition(function (pos) {
-  const lat = pos.coords.latitude;
-  const lng = pos.coords.longitude;
+
+navigator.geolocation.getCurrentPosition(function (position) {
+  const lat = position.coords.latitude;
+  const lng = position.coords.longitude;
 
   marker.setLatLng([lat, lng]).update();
   map.setView([lat, lng], 13);
 
+  console.log(marker.getLatLng())
   marker.bindPopup('<strong>Hello World</strong> <br> This is my location');
 });
+
+
+

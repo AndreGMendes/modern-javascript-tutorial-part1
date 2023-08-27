@@ -1,14 +1,28 @@
-// getCurrentPosition()
 
-function curSuccess(pos) {
-  const coords = pos.coords;
+// ---------------------------------------------------------------------------------------------------
+// GEOLOCATION API
+// ---------------------------------------------------------------------------------------------------
+options = {}
 
-  console.log(`Latitude: ${coords.latitude}`);
-  console.log(`Longitude: ${coords.longitude}`);
-  console.log(`Within: ${coords.accuracy} meters`);
-}
+const myLocation = navigator.geolocation.getCurrentPosition(
+    ((pos) => console.log(pos)), 
+    (error) => console.log(`${error.code} - ${error.code}`), 
+    options);
 
-function curError(err) {
+
+// ---------------------------------------------------------------------------------------------------
+// -----> 'getCurrentPosition()' method
+// ---------------------------------------------------------------------------------------------------
+const curSuccess = (position) => {
+    const coords = position.coords;
+  
+    console.log(`Latitude: ${coords.latitude}`);
+    console.log(`Longitude: ${coords.longitude}`);
+    console.log(`Within: ${coords.accuracy} meters`);
+  }
+
+
+const curError = (err) => {
   console.log(`Error: ${err.code} - ${err.message}`);
 }
 
@@ -18,13 +32,15 @@ const curOptions = {
   maximumAge: 0, // Do not use a cached position
 };
 
-// navigator.geolocation.getCurrentPosition(curSuccess, curError, curOptions);
+navigator.geolocation.getCurrentPosition(curSuccess, curError, curOptions);
 
-// watchPosition()
+// ---------------------------------------------------------------------------------------------------
+// -----> 'watchPosition()' method
+// ---------------------------------------------------------------------------------------------------
 
 const target = {
-  latitude: 41.3874387,
-  longitude: -71.394839,
+  latitude: 38.7400196,
+  longitude: -9.1319489,
 };
 
 function watchSuccess(pos) {
@@ -35,7 +51,7 @@ function watchSuccess(pos) {
     target.latitude === coords.latitude &&
     target.longitude === coords.longitude
   ) {
-    console.log('You have reached your destination!');
+    console.log('You have reached Rua Actor Isidoro nº26');
     navigator.geolocation.clearWatch(id);
   }
 }
