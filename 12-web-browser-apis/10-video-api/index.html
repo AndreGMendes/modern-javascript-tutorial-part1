@@ -4,16 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Video API</title>
 
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="title">
+      <h1>Hello World</h1>
+    </div>
     <video
       id="video"
       src="media/clouds.mov"
       width="500"
       poster="media/poster.png"
+      autoplay
+      muted
+      loop
+      playsinline 
     ></video>
 
     <div>
