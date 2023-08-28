@@ -5,6 +5,8 @@ const stop = document.getElementById('stop');
 const currentTime = document.getElementById('current-time');
 const volume = document.getElementById('volume');
 
+// volume.value = 0.1;
+
 play.addEventListener('click', () => audio.play());
 pause.addEventListener('click', () => audio.pause());
 stop.addEventListener('click', () => {
@@ -13,7 +15,7 @@ stop.addEventListener('click', () => {
 });
 
 audio.addEventListener('timeupdate', () => {
-  currentTime.innerText = audio.currentTime;
+  currentTime.innerText = `\n ${(audio.currentTime).toFixed()}s`;
 });
 
 volume.addEventListener('change', () => (audio.volume = volume.value));

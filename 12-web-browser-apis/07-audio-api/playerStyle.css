@@ -1,0 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+
+.buttons button, #current-time
+{
+    font-family: 'Montserrat', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+
+#play
+{
+    color: green;
+
+}
+
+#pause
+{
+    color: orange;
+
+}
+
+#stop
+{
+    color: red;
+
+}
+
+
+#current-time
+{
+    font-size: 0.8em;
+    font-weight: bold;
+    color: blue;
+}
+
+
+#volume
+{
+    accent-color: blue;
+    height: 10px;
+    width: 155px;    
+}
+

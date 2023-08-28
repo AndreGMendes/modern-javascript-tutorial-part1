@@ -68,6 +68,10 @@ function updateProgress(e) {
 }
 
 function setProgress(e) {
+  console.log(e);
+  // console.log(e.srcElement.clientWidth);
+  console.log(this.clientWidth);                            // 'This' refers to the Element we've called the event on, in this case: 'e.scrElement.clientWidth'
+
   const width = this.clientWidth;
   const clickX = e.offsetX;
   const duration = audio.duration;
@@ -89,3 +93,43 @@ prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', setProgress);
+
+
+
+// ------------------------------------------------------------------------------------------------
+
+function myfunction1 () {
+  console.log(this)
+}
+
+const myfunction2 = () => {
+  console.log(this)
+}
+
+
+function myfunction3 () {
+  console.log(this)
+}
+
+const myfunction4 = () => {
+  console.log(this)
+}
+
+
+
+const me = {
+  name: 'Zé',
+  myfunction1,
+  myfunction2
+}
+
+
+
+
+// me.myfunction1(); // Regular: 'This' - Object
+// me.myfunction2(); // Arrow:   'This' - Window oject
+
+
+myfunction3.call(me);
+myfunction3.apply(me);
+myfunction3.bind(me)();

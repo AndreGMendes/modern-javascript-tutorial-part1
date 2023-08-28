@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
     <title>Audio API</title>
+    <link rel="stylesheet" href="playerStyle.css" />
   </head>
   <body>
-    <audio src="summer.mp3" id="audio"></audio>
+    <audio id="audio" src="Polysea 35.mp3" type="audio/mpeg" autoplay /*controls*/></audio>
+    <div class="buttons">
 
-    <button id="play">Play</button>
-    <button id="pause">Pause</button>
-    <button id="stop">Stop</button>
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <button id="stop">Stop</button>
+
+    </div>
     <div id="current-time"></div>
-    <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.02"/>
   </body>
 </html>

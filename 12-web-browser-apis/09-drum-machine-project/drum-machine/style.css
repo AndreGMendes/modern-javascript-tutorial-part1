@@ -35,7 +35,7 @@ h1 {
   font-weight: 300;
 }
 
-.keys .playing kbd {
+.keys .playing /*kbd*/ {
   transform: scale(1.2);
   transition: all 0.07s;
 }
