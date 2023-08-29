@@ -21,23 +21,52 @@ const rollAnimation = [
 ];
 
 const rollOptions = {
-  duration: 3000,
+  duration: 1000,
   iterations: Infinity,
+  delay: 3000,
+  timingFunction: 'ease'
 };
 
 const roll = ball.animate(rollAnimation, rollOptions);
+
 
 play.addEventListener('click', () => {
   roll.playbackRate = 1;
   roll.play();
 });
+
 pause.addEventListener('click', () => roll.pause());
+
 reverse.addEventListener('click', () => roll.reverse());
+
 speedUp.addEventListener(
   'click',
   () => (roll.playbackRate = roll.playbackRate * 2)
 );
+
 slowDown.addEventListener(
   'click',
   () => (roll.playbackRate = roll.playbackRate * 0.5)
 );
+
+
+
+
+// ------------------------------------------------
+// SIMPLE JS ANIMATION (ANDY)
+// ------------------------------------------------
+const square = document.querySelector(".square");
+const circle = document.querySelector(".circle");
+const btnHideSquare = document.querySelector(".btn-hide-square");
+const btnPulseCircle = document.querySelector(".btn-pulse-circle");
+
+btnHideSquare.addEventListener('click', () => {
+  square.classList.toggle("hidden")
+  square.classList.toggle("fadeOutTransition")
+});
+
+
+btnPulseCircle.addEventListener('click', () => {
+  circle.classList.toggle("pulseAnimation")
+})
+

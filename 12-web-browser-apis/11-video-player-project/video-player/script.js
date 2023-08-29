@@ -46,11 +46,15 @@ function setProgress() {
   video.currentTime = (+progress.value * video.duration) / 100;
 }
 
+// Clicking on Video window
 video.addEventListener('click', playPause);
-video.addEventListener('play', updateIcon);
-video.addEventListener('pause', updateIcon);
 video.addEventListener('timeupdate', updateProgress);
 
+// Change Icon play/pause
+video.addEventListener('play', updateIcon);
+video.addEventListener('pause', updateIcon);
+
+// Clicking on player buttons
 play.addEventListener('click', playPause);
 stop.addEventListener('click', stopVideo);
 progress.addEventListener('click', setProgress);
