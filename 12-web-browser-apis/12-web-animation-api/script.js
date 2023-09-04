@@ -23,7 +23,7 @@ const rollAnimation = [
 const rollOptions = {
   duration: 1000,
   iterations: Infinity,
-  delay: 3000,
+  // delay: 3000,
   timingFunction: 'ease'
 };
 
