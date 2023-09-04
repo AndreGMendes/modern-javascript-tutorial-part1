@@ -8,10 +8,10 @@ function addVoicesToSelect() {
 
   for (let i = 0; i < voices.length; i++) {
     const option = document.createElement('option');
-    option.textContent = `${voices[i].name} - ${voices[i].lang}`;
+    option.textContent = `${voices[i].name} ::: ${voices[i].lang}`;
 
     if (voices[i].default) {
-      option.textContent += ' - DEFAULT';
+      option.textContent += ' ->>> DEFAULT';
     }
 
     option.setAttribute('data-lang', voices[i].lang);
@@ -20,15 +20,16 @@ function addVoicesToSelect() {
   }
 }
 
-function onSubmit(e) {
+const onSubmit = function (e) {
   e.preventDefault();
+  console.log(e);
 
   const textInput = document.getElementById('text-input');
 
   const utterThis = new SpeechSynthesisUtterance(textInput.value);
 
-  const selectedOption =
-    voiceSelect.selectedOptions[0].getAttribute('data-name');
+  const selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+
   for (let i = 0; i < voices.length; i++) {
     if (voices[i].name === selectedOption) {
       utterThis.voice = voices[i];
