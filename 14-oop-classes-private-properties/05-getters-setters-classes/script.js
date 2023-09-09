@@ -30,9 +30,11 @@ class Person {
 }
 
 const person1 = new Person('john', 'doe');
+// GETTERS
 console.log(person1.firstName);
 console.log(person1.lastName);
 
+// SETTERS
 person1.firstName = 'joe';
 person1.lastName = 'smith';
 console.log(person1.fullName);

@@ -34,3 +34,12 @@ const myfunction = () => {
   
   ze('AndréX');
   
+
+// ------------------------------------------------------------
+// EXAMPLE 'For Loop' on Object's Entries ---------------------
+// ------------------------------------------------------------
+for (let [key, value] of Object.entries(rect1)) {
+  if (typeof value !== 'function') {
+    console.log(`${key} - ${value}`);
+  }
+}

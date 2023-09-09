@@ -41,6 +41,12 @@ class Wallet {
     return this._balance;
   }
 
+
+  // set balance(value) {
+  //   this._balance = value;
+  // }
+
+
   get transactions() {
     return this._transactions;
   }

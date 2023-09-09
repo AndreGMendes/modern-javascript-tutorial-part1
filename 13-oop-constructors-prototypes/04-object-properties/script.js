@@ -17,6 +17,7 @@ console.log(rect1['width']);
 rect1.color = 'red';
 
 rect2.perimeter = () => 2 * (rect2.width + rect2.height);
+rect2.perimeterX = () => 2 * (this.width + this.height);
 
 // Delete property
 delete rect2.perimeter;

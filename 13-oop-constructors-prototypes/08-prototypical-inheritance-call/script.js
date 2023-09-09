@@ -31,12 +31,15 @@ Circle.prototype = Object.create(Shape.prototype);
 
 // Set prototype constructors
 Rectangle.prototype.constructor = Rectangle;
-Rectangle.prototype.constructor = Rectangle;
+Circle.prototype.constructor = Circle;
 
 const rect = new Rectangle('Rectangle 1', 20, 20);
 const cir = new Circle('Circle 1', 30);
 
 // console.log(rect, cir);
 
+console.log(rect);
 rect.logName();
+
+console.log(cir);
 cir.logName();

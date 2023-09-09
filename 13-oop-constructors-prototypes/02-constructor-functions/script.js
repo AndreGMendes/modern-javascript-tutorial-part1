@@ -30,3 +30,23 @@ console.log(rect1.constructor);
 
 // Check to see if an object is an instance of a constructor
 console.log(rect2 instanceof Rectangle);
+
+
+// ----------------------
+// USING CONSTEUCTOR
+// ----------------------
+class RectangleClass {
+  
+  constructor (name, width, height) {
+    this.name = name;
+    this.width = width;
+    this.height = height;
+    
+    this.area = function () {
+      return this.height * this.width;
+    };
+  }
+}
+
+const rect4 = new RectangleClass ('ze', 333, 333)
+console.log (rect4.area());
