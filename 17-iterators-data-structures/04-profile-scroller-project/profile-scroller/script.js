@@ -33,7 +33,7 @@ const people = [
   },
 ];
 
-const container = document.querySelector('.container');
+// const container = document.querySelector('.container');
 const img = document.querySelector('img');
 const profileInfo = document.querySelector('.profile-info');
 const nextBtn = document.querySelector('#next');
@@ -41,7 +41,7 @@ const nextBtn = document.querySelector('#next');
 function* createPeopleIterator() {
   let index = 0;
   while (true) {
-    yield people[index++ % people.length];
+    yield people[index++ % people.length]; // makes the iteration cycle from 1 to 4. When index reaches 4 -> 4 % 4 = 0. So after it index is 5 which 5%4 is 1... etc... 
   }
 }
 
@@ -53,7 +53,7 @@ nextBtn.addEventListener('click', () => {
   profileInfo.querySelector('h3').textContent = person.name;
   profileInfo.querySelectorAll('p')[0].textContent = `${person.age} Years Old`;
   profileInfo.querySelectorAll('p')[1].textContent = `From ${person.location}`;
-  profileInfo.querySelectorAll('p')[2].textContent = person.looking;
+  profileInfo.querySelectorAll('#third-paragraph')[0].textContent = person.looking;
 });
 
 nextBtn.click();

@@ -25,3 +25,24 @@ console.log([...createTeamIterator(teams)]);
 // Use with destructuring
 const [first, second, third] = createTeamIterator(teams);
 console.log(first, second, third);
+
+
+// --------------------------------------------------------------
+const names = ['zé', 'Manel', 'Chico', 'Rui'];
+
+
+function* createTeamIteratorXXX(names) {
+  for (let i = 0; i < names.length; i++) {
+    yield names[i];
+  }
+}
+
+for (const name of createTeamIterator(names)) {
+  console.log(name);
+}
+
+console.log([...createTeamIterator(teams)])
+
+
+
+
