@@ -1,0 +1,32 @@
+// Initializes 'package.json'
+--------------------------------------------------------------
+-> npm init
+
+
+
+// Install Node Modules:
+--------------------------------------------------------------
+-> npm install -D webpack webpack-cli       :: Installs WEBPACK
+-> npm i -D style-loader css-loader         :: Installs CSS related modules to be imported in 'src/index.js' and bundled into 'dist/bundle.js' upon build.
+-> npm i -D html-webpack-plugin             :: Creates folder 'dist' and all files inside it (bundle.js, index.html) automaticly upon build.
+
+
+
+// For running the app:
+--------------------------------------------------------------
+-> npm run build
+
+
+
+// WEBPACK Configuration (webpack.config.js):
+--------------------------------------------------------------
+const path = require('path')
+
+module.exports = {
+    mode: 'development',
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+};
