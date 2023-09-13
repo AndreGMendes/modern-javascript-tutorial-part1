@@ -28,6 +28,8 @@ console.log(peopleMap.keys());
 console.log(peopleMap.values());
 console.log(peopleMap.entries());
 
+console.log(peopleMap.entries());
+
 const iterator = peopleMap.values();
 
 console.log(iterator.next());
