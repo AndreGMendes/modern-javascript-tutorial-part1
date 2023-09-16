@@ -1,4 +1,4 @@
-const reverseString = require('./reversestring');
+const {reverseString, stringToBinary} = require('./reversestring');
 
 describe('Reverse String', () => {
   it('should be a function', () => {
@@ -15,4 +15,21 @@ describe('Reverse String', () => {
     expect(reverseString('wow')).toEqual('wow');
     expect(reverseString('hello world')).toEqual('dlrow olleh');
   });
+
+
+  // it('should convert a String to Binary and add a dash each 8 group of digits', () => {
+  //   expect(stringToBinary('Hello')).toEqual('01001000-01100101-01101100-01101100-01101111')
+
+  // });
+
+
 });
+
+describe ('String Conversion Operations', () => {
+
+  it('should convert a String to Binary and add a dash each 8 group of digits', () => {
+    expect(stringToBinary('Hello')).toEqual('01001000-01100101-01101100-01101100-01101111')
+  
+  });
+  
+})
