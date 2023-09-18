@@ -69,16 +69,30 @@ async function createFolder(folderName) {
   }
 }
 
-createFolder('folder1');
 
-// renameFile('file1.txt', 'file.txt');
+// Remove a folder //
+async function deleteFolder(folderName) {
+  try {
+    await fs.rmdir(folderName);
+    console.log(`Folder ${folderName} deleted`);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-// deleteFile('file4.txt');
+
+
+
+// createFolder('My Folder');
+// createFile('./My Folder/file1.txt', 'Hello World 1');
+// renameFile('./My Folder/file1.txt', './My Folder/file2.txt');
+// readFile('./My Folder/file2.txt');
+// deleteFile('./My Folder/file2.txt');
+// deleteFolder('./My Folder')
+
 
 // readFile('file1.txt');
 // readFile('file2.txt');
-// readFile('file3.txt');
 
-// createFile('file4.txt', 'Hello World 4');
 
 // https://nodejs.org/api/fs.html
