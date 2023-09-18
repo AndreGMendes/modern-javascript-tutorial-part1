@@ -26,3 +26,30 @@ function buildCharMap(str) {
 }
 
 module.exports = anagram;
+
+
+// -------------
+
+
+
+// ------------Simple Explaination
+// function anagram(str1, str2) {
+//   const aCharMap = buildCharMap(str1);
+//   const bCharMap = buildCharMap(str2);
+
+//   console.log(aCharMap, bCharMap);
+// }
+
+
+// function buildCharMap(str) {
+//   const charMap = {};
+
+//   for (let char of str.toLowerCase()) {
+//     charMap[char] = charMap[char] + 1 || 1;
+//     // charMap[`My Character - ${char}`] = charMap[`My Character - ${char}`] + 1 || 1;
+//   }
+
+//   return charMap;
+// }
+
+// anagram('hello','world')
