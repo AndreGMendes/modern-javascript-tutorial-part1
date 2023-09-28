@@ -96,3 +96,14 @@ async function deleteFolder(folderName) {
 
 
 // https://nodejs.org/api/fs.html
+
+
+
+//-------------------
+
+const folderHasBeenCreated = createFolder('My Folder');
+const fileHasBeenCreated = createFile('./My Folder/file1.txt', 'Hello World 1');
+const fileHasBeenRenamed = renameFile('./My Folder/file1.txt', './My Folder/file2.txt');
+const fileHasBeenReaded = readFile('./My Folder/file2.txt');
+const fileHasBeenDeleted = deleteFile('./My Folder/file2.txt');
+const folderHasBeenDeleted = deleteFolder('./My Folder')
