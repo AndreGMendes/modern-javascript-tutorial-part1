@@ -2,7 +2,7 @@ class IdeaForm {
     constructor () {
         this._formModal = document.querySelector('#form-modal');
         
-        this.render();
+        // this.render();
     }
 
     render () {

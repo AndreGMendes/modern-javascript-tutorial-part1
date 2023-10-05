@@ -8,10 +8,10 @@ import IdeaList from './components/IdeaList';
 const modal = new Modal();
 
 const ideaForm = new IdeaForm();
-// ideaForm.render();
+ideaForm.render();
 
 const ideaList = new IdeaList();
-// ideaList.render();
+
 
 
 
