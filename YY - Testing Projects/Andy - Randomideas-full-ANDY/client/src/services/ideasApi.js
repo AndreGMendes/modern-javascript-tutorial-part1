@@ -7,7 +7,25 @@ class IdeasApi {
     }
 
     getIdeas() {
-        return axios.get(this._apiUrl)
+        return axios.get(this._apiUrl);
+    }
+
+    createIdea(data) {
+        return axios.post(this._apiUrl, data);
+    }
+
+    updatedIdea(id, data) {
+        return axios.put(`${this._apiUrl}/${id}`, data);
+    }
+
+    deleteIdea(id) {
+        const username = localStorage.getItem('username') ? localStorage.getItem('username') : '';
+
+        return axios.delete(`${this._apiUrl}/${id}`, {
+            data: {
+                username,
+            },
+        });
     }
 
 }

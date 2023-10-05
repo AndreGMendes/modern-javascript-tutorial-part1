@@ -22,6 +22,33 @@ class IdeaList {
     };
 
 
+    addEventListeners () {
+        this._ideaListEl.addEventListener('click', (e) => {
+            if (e.target.classList.contains('fa-times') ) {
+                e.stopImmediatePropagation();
+
+                const ideaId = e.target.parentElement.parentElement.dataset.id;
+                console.log(ideaId);
+                this.deleteIdea(ideaId);
+            }
+        });
+    }
+
+
+    async deleteIdea (ideaId) {
+        try {
+            // DELETE FROM SERVER
+            const res = await IdeasApi.deleteIdea(ideaId);
+            
+            this._ideas.filter((idea) => idea._id !== ideaId);
+            this.getIdeas();
+
+        } catch (error) {
+            alert('You cannot delete this resource')
+        }
+    }
+
+
     async getIdeas () {
         try {
             const res = await IdeasApi.getIdeas();
@@ -35,6 +62,12 @@ class IdeaList {
     }
 
 
+    addIdeaToList (idea) {
+        this._ideas.push(idea);
+        this.render();    
+    }
+
+    
     getTagClass (tag) {
         tag = tag.toLowerCase();
         let tagClass = '';
@@ -51,10 +84,13 @@ class IdeaList {
         this._ideaListEl.innerHTML = this._ideas.map ((idea) => {
             
             const tagClass = this.getTagClass(idea.tag);
+            const deleteBtn = idea.username === localStorage.getItem('username') ? `<button class="delete"><i class="fas fa-times"></i></button>` : ''
 
             return `
-            <div class="card">
-                <button class="delete"><i class="fas fa-times"></i></button>
+            <div class="card" data-id="${idea._id}">
+
+                ${deleteBtn}                
+                
                 <h3>${idea.text}</h3>
                 <p class="tag ${tagClass}">${idea.tag.toUpperCase()}</p>
                 <p>
@@ -64,6 +100,8 @@ class IdeaList {
             </div>
             `;
         }).join('')
+
+        this.addEventListeners();
     }
 }
 
